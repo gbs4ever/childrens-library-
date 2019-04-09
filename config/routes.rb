@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :reviews
   resources :checkouts, only: [:new, :create, :index]
   resources :books , only: [:new, :create, :index,:show]
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
