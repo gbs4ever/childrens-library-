@@ -1,0 +1,40 @@
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: green;
+}
+
+</style>
+
+
+<ul>
+<%if current_user%>
+
+<li><%=link_to "Home", root_path %></li>
+<li><%=link_to "Log out", destroy_user_session_path, method: :delete %></li>
+<%else%>
+
+<li><%=link_to "Sign up", new_user_registration_path%></li>
+<li><%=link_to "Log in",  new_user_session_path%></li>
+<li><%=link_to "Log in with facebook", user_facebook_omniauth_authorize_path  %></li>
+<%end%>
+</ul>
