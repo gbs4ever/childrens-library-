@@ -30,6 +30,8 @@ li a:hover {
 <%if current_user%>
 
 <li><%=link_to "Home", root_path %></li>
+<li><%=link_to "Books", books_path %></li>
+<li><%=link_to "Checkout", new_checkout_path %></li>
 <li><%=link_to "Log out", destroy_user_session_path, method: :delete %></li>
 <%else%>
 
