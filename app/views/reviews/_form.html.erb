@@ -1,0 +1,18 @@
+<h2>Please review the books thank you</h2>
+<p><%= form_for @review do |f| %>
+
+  <%= f.label "Choose a book " %><br>
+  <%= f.collection_select :book, Book.all, :id, :title %> <br><br>
+
+  <%= f.label "Comments" %><br>
+  <%= f.text_area :comments, :cols => 20, :rows => 6  %><br>
+  <%= f.label "Status" %><br>
+  <%= f.text_field :status %><br><br>
+  
+
+  
+ 
+
+ 
+  <%= f.submit %>
+<% end %><p>
