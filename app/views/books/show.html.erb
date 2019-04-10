@@ -1,5 +1,8 @@
 Title:<%=@book.title %> <br>
 Author: <%=@book.author%> <br> <br>
-<%if current_user%>
+<a href = "/reviews/new" ><button type="button">Review this book</button></a><br> <br>
+
+<%if current_user.id == @book.user_ids.first%>
 <button type="button"> <%=link_to "Edit this book",  edit_book_path(@book) %></button>
+
 <%end%>

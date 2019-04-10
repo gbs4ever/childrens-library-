@@ -1,3 +1,37 @@
-<%@books.each do |book|%>
-Title:  <%= link_to book.title, book_path(book)%><br>
-<%end%>
+<style>
+table,  td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+
+
+</style>
+
+<table style="width:100%">
+  <tr>
+    <th>Title</th>
+    <th>Author</th> 
+    <th>Review</th>
+    <th>Status</th>
+    <th> Link </th>
+  </tr>
+  <%@books.each do |book|%>
+  <tr>
+  
+    <td><%=book.title%></td>
+    <td><%=book.author%></td> 
+    <td></td> 
+    <td></td> 
+    <td><%= link_to "Click here", book_path(book)%></td>
+    <%end%>
+  </tr>
+  </table>
+
+
+
+
+
+ 
