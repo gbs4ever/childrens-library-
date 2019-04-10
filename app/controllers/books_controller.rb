@@ -6,10 +6,9 @@ class BooksController < ApplicationController
    @book = Book.new 
   end
   def create
-    var=current_user.books.new(book_params)
-    if var.save 
+    if var=current_user.books.create(book_params) 
      redirect_to books_path(var)
-    # binding.pry
+  
     else
       #binding.pry
      #puts var.errors.full_messages_for(:title).first
@@ -17,12 +16,14 @@ class BooksController < ApplicationController
     end
   end
     def show
+   
     @book = Book.find(params[:id])
     end
   def edit
     @book = Book.find(params[:id])
   end
   def update
+    #binding.pry
      var=Book.find(params[:id])
     if var.update(book_params)
     redirect_to  books_path(var)
