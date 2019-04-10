@@ -1,0 +1,5 @@
+Title:<%=@book.title %> <br>
+Author: <%=@book.author%> <br> <br>
+<%if current_user%>
+<button type="button"> <%=link_to "Edit this book",  edit_book_path(@book) %></button>
+<%end%>
