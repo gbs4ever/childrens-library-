@@ -1,0 +1,20 @@
+
+<p><%= form_for @checkout do |f| %>
+
+  <%= f.label "Choose a book " %><br>
+  <%= f.collection_select :book_id, Book.all, :id, :title %> <br>
+  <%= f.label "Check out date " %><br>
+ <%= select_date Date.today, prefix: :taken_out%><br><br>
+ <%= f.label "Due date " %><br>
+ <%= datetime_select Date.today, prefix: :due_date %><br><br>
+
+  
+  
+  
+
+  
+ 
+
+ 
+  <%= f.submit %>
+<% end %><p>
