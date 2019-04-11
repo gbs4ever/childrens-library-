@@ -1,8 +1,22 @@
-Title:<%=@book.title %> <br>
+
+<h3> Book Info:</h3>
+Title:<%=@book.title %> <br> <br> 
 Author: <%=@book.author%> <br> <br>
-<a href = "/reviews/new" ><button type="button">Review this book</button></a><br> <br>
+Comments:
+<select>
+ 
+<%@book.reviews.each do |review|%>
+  <option> <%=review.comments%></option>
+  <%end%>
+</select><br>
+<br>
+<button type="button"> <%=link_to "Review this book",  new_book_review_path(@book) %></button>
 
-<%if current_user.id == @book.user_ids.first%>
-<button type="button"> <%=link_to "Edit this book",  edit_book_path(@book) %></button>
+<%if current_user.id == @book.users.ids.first || current_user.admin %>
+<p><button type="button"> <%=link_to "Edit this book",  edit_book_path(@book) %></button> <p>
+<%end%>
 
+<%if current_user.admin%>
+
+<p><button type="button"><%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %> </button> <p>
 <%end%>
