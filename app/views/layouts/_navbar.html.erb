@@ -4,7 +4,9 @@
 <li><%=link_to "Reviews", new_review_path%></li>
 <li><%=link_to "Books", books_path %></li>
 <li><%=link_to "Checkout", new_checkout_path %></li>
+<li><%=link_to "My Checkout Books", checkouts_path %></li>
 <li><%=link_to "Log out", destroy_user_session_path, method: :delete %></li>
+
 <%if current_user.admin%>
 <li><%=link_to "All Reviews", reviews_path %></li>
 <li><%=link_to "All Checkouts", checkouts_path %></li>
@@ -18,3 +20,4 @@
 <li><%=link_to "Log in with facebook", user_facebook_omniauth_authorize_path  %></li>
 <%end%>
 </ul>
+ <strong> Hi, <%=current_user.username if current_user%></strong> 

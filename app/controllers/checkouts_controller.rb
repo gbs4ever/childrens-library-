@@ -1,6 +1,11 @@
 class CheckoutsController < ApplicationController
 def index
-  @checkouts = Checkout.all
+   
+   if current_user.admin
+    @checkouts = Checkout.all
+   else
+    @checkouts= current_user.checkouts
+   end
 end
   def new
    @checkout =   current_user.checkouts.build
