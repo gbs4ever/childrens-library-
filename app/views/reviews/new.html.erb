@@ -1,1 +1,12 @@
+<% if @review.errors.any? %>
+ <div id="error_explanation">
+   
+
+   <% @review.errors.full_messages.each do |msg| %>
+    <%= msg %>!  Please fill it out correctly.
+   <% end %>
+   
+ </div>
+<% end %>
+
 <%= render 'form' %>

@@ -18,15 +18,15 @@ class ReviewsController < ApplicationController
    
  
   def create
-    current_user.reviews.build(review_params)
-    if  current_user.save 
-     redirect_to books_path  
+    @review = current_user.reviews.build(review_params)
+    if  current_user.save
+     redirect_to book_review_path(@review.book, @review)  
     else 
      render :new 
    end
   end
    def show
-     binding.pry
+   @review =Review.find(params[:id])
   end
 
 
