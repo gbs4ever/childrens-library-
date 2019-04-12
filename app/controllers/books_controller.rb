@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  
   def index
     @books = Book.all
   end
@@ -6,35 +7,40 @@ class BooksController < ApplicationController
    @book = Book.new 
   end
   def create
-    if var=current_user.books.create(book_params) 
-     redirect_to books_path(var)
-  
+    @book=current_user.books.build(book_params) 
+    if  current_user.save  
+      redirect_to book_path(@book)
     else
-      #binding.pry
-     #puts var.errors.full_messages_for(:title).first
-     redirect_to  new_book_path
+      render :new 
     end
   end
-    def show
-   
+  def show
     @book = Book.find(params[:id])
-    end
+  end
   def edit
     @book = Book.find(params[:id])
   end
   def update
-    #binding.pry
-     var=Book.find(params[:id])
-    if var.update(book_params)
-    redirect_to  books_path(var)
+
+     @var=Book.find(params[:id])
+    if @var.update(book_params)
+    redirect_to  book_path(@var)
     else 
-      render :edit
+      #render :edit
+       redirect_to edit_book_path(@var)
     end
   end
-
-private
-def book_params
-params.require(:book).permit(:title,:author,:user_id)
-end
+  def destroy
+   @book = Book.find(params[:id])
+    @book.destroy
+   redirect_to books_path #notice: "Delete success"
+  end
+ 
+ 
+ 
+  private
+  def book_params
+    params.require(:book).permit(:title,:author,:user_id)
+  end
 
 end
