@@ -1,1 +1,10 @@
+<% if @book.errors.any? %>
+ <div id="error_explanation">
+<% @book.errors.full_messages.each do |msg| %>
+    <%= msg %> please fill it out!
+   <% end %>
+   
+ </div>
+<% end %> <br>
+
 <%= render 'form' %>

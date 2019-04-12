@@ -23,9 +23,10 @@ th, td {
   
     <td><%=book.title%></td>
     <td><%=book.author%></td> 
-    <td></td> 
-    <td></td> 
-    <td><%= link_to "Click here", book_path(book)%></td>
+
+    <td><%=book.reviews[-1].comments if !book.reviews.empty?%></td> 
+    <td><%=book.reviews[-1].status if !book.reviews.empty?%></td> 
+    <td><%= link_to "Click here for more info", book_path(book)%></td>
     <%end%>
   </tr>
   </table>
