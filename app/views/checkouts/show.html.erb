@@ -1,3 +1,5 @@
-Thank  You for visiting our library  <%=current_user.email%>
+Thank  You for visiting our library  <%=current_user.username%>, please come again.
 <br>
-<p>Book  taken out: <%=@checkout.book.title%> <p>
+<p>Book taken out: <%=@checkout.book.title%> </p>
+<p>Checked out: <%=time @checkout.taken_out%> </p>
+<p>Due date: <%= time @checkout.due_date%> <p>
