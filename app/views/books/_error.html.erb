@@ -1,0 +1,8 @@
+<% if object.errors.any? %>
+ <div id="error_explanation">
+<% object.errors.full_messages.each do |msg| %>
+    <%= msg %> please fill it out!
+   <% end %>
+   
+ </div>
+<% end %> <br>
