@@ -1,7 +1,14 @@
 class BooksController < ApplicationController
   
   def index
+   
+    if params[:filter] == "Title"
+    @books = Book.title
+    elsif params[:filter] == "Author"
+    @books = Book.author
+    else
     @books = Book.all
+    end
   end
   def new
    @book = Book.new 
