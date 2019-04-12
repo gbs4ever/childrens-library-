@@ -2,6 +2,6 @@
 <%@checkouts.each do |checkout|%>
 <h2>Books taken out:</h2> 
  <%=checkout.book.title%> 
-<p>Checked out: <%=time checkout.taken_out%> </p>
-<p>Due date: <%= time checkout.due_date%> <p>
+<p>Checked out: <%=time(checkout.taken_out)%> </p>
+<p>Due date: <%= time(checkout.due_date)%> <p>
 <%end%>
