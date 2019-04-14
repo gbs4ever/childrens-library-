@@ -10,14 +10,18 @@
   </head>
 
   <body>
+
    <%=render 'layouts/navbar'%>
-  <%=render 'layouts/alerts'%>
-  
-  
+ 
+    <div class="container-fluid">
+   
 
     <%= yield %>
+   
+     <%=render 'layouts/alerts'%>
   <footer class="branding">
         <small>&copy; 2019 <strong>Childrens Library</strong></small>
       </footer>
+      </div>
   </body>
 </html>

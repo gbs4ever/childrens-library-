@@ -1,7 +1,28 @@
-
-<%@checkouts.each do |checkout|%>
 <h2>Books taken out:</h2> 
- <%=checkout.book.title%> 
-<p>Checked out: <%=time(checkout.taken_out)%> </p>
-<p>Due date: <%= time(checkout.due_date)%> <p>
-<%end%>
+<table class="table table-bordered table-dark table-hover">
+  <thead>
+    <tr>
+    
+      <th scope="col">Book</th>
+      <th scope="col">Checked out:</th>
+      <th scope="col">Due date:</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+<%@checkouts.each do |checkout|%>
+    <tr>
+      
+      <td scope="row" ><%=checkout.book.title%> </td>
+      <td><%=time checkout.taken_out %> </td>
+      <td><%= time checkout.due_date%> </td>
+      <%end%>
+    </tr>
+   
+     
+      
+  </tbody>
+</table>
+
+ 
+

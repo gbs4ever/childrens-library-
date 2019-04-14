@@ -2,6 +2,7 @@ class CheckoutsController < ApplicationController
 def index
    
    if current_user.admin
+
     @checkouts = Checkout.all
    else
     @checkouts= current_user.checkouts

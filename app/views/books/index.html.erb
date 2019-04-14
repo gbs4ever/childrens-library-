@@ -1,27 +1,21 @@
-<style>
-table,  td {
-  border: 2px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-}
 
 
-</style>
 
-<table style="width:100%">
+
+<table class="table table-border table-hover"style="width:100%">
+ <thead class="p-3 mb-2 bg-info text-white">
   <tr>
-    <th>Title</th>
-    <th>Author</th> 
-    <th>Review</th>
-    <th>Status</th>
-    <th> Link </th>
+    <th scope="col">Title </th>
+    <th scope="col" >Author</th> 
+    <th scope="col">Review</th>
+    <th scope="col">Status</th>
+    <th scope="col"> Link </th>
   </tr>
+   </thead>
   <%@books.each do |book|%>
   <tr>
   
-    <td><%=book.title%></td>
+    <td scope="row"><%=book.title%></td>
     <td><%=book.author%></td> 
 
     <td><%=book.reviews[-1].comments if !book.reviews.empty?%></td> 

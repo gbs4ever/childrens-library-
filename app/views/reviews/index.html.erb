@@ -1,10 +1,23 @@
 
-<% @reviews.each do  |review| %>
+<table class="table table-bordered  table-hover">
+ <thead class="p-3 mb-2 bg-info text-white">
+    <tr>
+      <th scope="col">Book title</th>
+      <th scope="col">Comments</th>
+     
+    </tr>
+  </thead>
 
-<div id = review_title >
-<h3 > Book title: <%=review.book.title if review.book%></h3>
-<p>Comments: <%=review.comments%> <p><br><br>
-
-
-<%end%>
-</div>
+  <tbody>
+  <% @reviews.each do  |review| %>
+    
+   
+    <tr>
+    
+      <td><%=review.book.title if review.book%></td>
+      <td><%=review.comments%></td>
+     <%end%>
+    </tr>
+   
+  </tbody>
+</table>

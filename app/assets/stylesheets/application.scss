@@ -1,0 +1,35 @@
+@import "bootstrap";
+
+body {
+  background-color:rgb(190, 239, 255)
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(73, 73, 73);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: green;
+}
+table,  td {
+ 
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
