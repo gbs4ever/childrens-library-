@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   
   def index
-   
+   #binding.pry
     if params[:filter] == "Title"
     @books = Book.title
     elsif params[:filter] == "Author"
@@ -39,7 +39,9 @@ class BooksController < ApplicationController
   end
   def destroy
    @book = Book.find(params[:id])
+   @book.reviews.destroy if @book.reviews
     @book.destroy
+    
    redirect_to books_path #notice: "Delete success"
   end
  
