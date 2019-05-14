@@ -3,7 +3,27 @@
 <h3>Welcome to the library app   <%=current_user.username if current_user%>. </h3> <br>
 <p class="font-weight-normal">We created this app as an open source and  hope the community will contribute!</p>
 <div><a href = "/books/new" ><button type="button">Create a Book</button></a> </div>
+<button class="js-more" >More Info</button>
+<div class = "checkout"  >Your checkout books
+<ul>
+</ul>
 
+</div>
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").on("click", function() {
+ $.getJSON("/checkouts.json", function(data) {
+  console.log(data.length)
+   data.forEach((el)=>{
+    
+   // add due date
+   
+    $(".checkout ul")[0].innerHTML += `<li>${el.book.title}</li><br>`
+     console.log(el.book)
+     
+   }) 
 
- 
-
+ })
+  });
+})
+</script>
