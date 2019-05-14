@@ -12,10 +12,10 @@
   
 <%@checkouts.each do |checkout|%>
     <tr>
-      
+  
       <td scope="row" ><%=checkout.book.title%> </td>
-      <td><%=time checkout.taken_out %> </td>
-      <td><%= time checkout.due_date%> </td>
+      <td><%= time (checkout.taken_out) %> </td>
+      <td><%= time (checkout.due_date)%> </td>
       <%end%>
     </tr>
    

@@ -10,6 +10,7 @@
     <th scope="col">Review</th>
     <th scope="col">Status</th>
     <th scope="col"> Link </th>
+     <th scope="col"> Checkout </th>
   </tr>
    </thead>
   <%@books.each do |book|%>
@@ -20,7 +21,8 @@
 
     <td><%=book.reviews[-1].comments if !book.reviews.empty?%></td> 
     <td><%=book.reviews[-1].status if !book.reviews.empty?%></td> 
-    <td><%= link_to "Click here for more info", book_path(book)%></td>
+    <td><button ><%= link_to "Click here for more info", book_path(book)%></button></td>
+    <td><button class="js-more"  data-id="<%= book.id %>">Check out</button></td>
     <%end%>
   </tr>
   </table>
@@ -31,8 +33,7 @@
         <%= select_tag "filter", "<option>Title</option><option>Author</option>".html_safe ,:style => "width:90px" %>
         <%= submit_tag " Sort " %>
       <% end %>
- 
-  </div>
+ </div>
 
 <div>
  <%= form_tag "", method: "get"  do %>
@@ -42,8 +43,22 @@
  <%end%>
  </div>
 
-
-
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").on("click", function(event) {
+    event.preventDefault()
+     let id = $(this).data("id");
+ $.post("/checkouts.json", {
+   checkout: {
+     book_id: id
+     }
+    }).done(function(data) {
+   //this happens after the request is complete
+   //this.remove()
+ })
+  });
+})
+</script>
 
 
 
