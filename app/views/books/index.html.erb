@@ -34,6 +34,13 @@
  
   </div>
 
+<div>
+ <%= form_tag "", method: "get"  do %>
+
+ <%= text_field_tag(:search, nil, placeholder:"search...")%>
+ <%= submit_tag "Search" %>
+ <%end%>
+ </div>
 
 
 

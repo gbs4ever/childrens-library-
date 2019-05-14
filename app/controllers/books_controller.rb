@@ -1,15 +1,15 @@
 class BooksController < ApplicationController
   
   def index
-   #binding.pry
-    if params[:filter] == "Title"
-    @books = Book.title
-    elsif params[:filter] == "Author"
-    @books = Book.author
+   if params[:search] 
+  @books = Book.contains( params[:search])
+  elsif params[:filter]
+    @books = Book.send(params[:filter].downcase)
     else
     @books = Book.all
     end
   end
+
   def new
    @book = Book.new 
   end
