@@ -18,20 +18,36 @@
 //book checkout 
 $(document).ready(function checkout () {
    console.log("j.checkout has loaded")
-  $(".js-m").on("click", function (event) {
-  
-    event.preventDefault()
-    let id = $(this).data("id");
+  $(".check").on("click", function (event) {
+   event.preventDefault()
+   console.log('clicked')
+     let id = $(this).data("id");
     $.post("/checkouts.json", {
       checkout: {
         book_id: id
       }
-    }).done(function (data) {
-      
-     // this.remove()   ////.innerHTML = "taken out "
+    }).done( () => {
+    this.remove()
+    
+      $(`.status${id}`).html('<p class="success-message"> Book checked out </p> ')
      console.log("smile")
+ 
       //this happens after the request is complete
-      //this.remove()
+   
     })
   });
  })
+ // add checkout books to welcome
+$(function () {
+  $(".js-more").on("click", function () {
+    $.getJSON("/checkouts.json", function (data) {
+      console.log("the page clicker loaded")
+      data.forEach((el) => {
+        console.log(`${ el.due_date }`)
+        // add due date
+        $(".checkout ul")[0].innerHTML += `<li>${el.book.title}</li><br><br>${ el.due_date }`
+     })
+
+    })
+  });
+})
