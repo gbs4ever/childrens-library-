@@ -14,3 +14,24 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+//book checkout 
+$(document).ready(function checkout () {
+   console.log("j.checkout has loaded")
+  $(".js-m").on("click", function (event) {
+  
+    event.preventDefault()
+    let id = $(this).data("id");
+    $.post("/checkouts.json", {
+      checkout: {
+        book_id: id
+      }
+    }).done(function (data) {
+      
+     // this.remove()   ////.innerHTML = "taken out "
+     console.log("smile")
+      //this happens after the request is complete
+      //this.remove()
+    })
+  });
+ })
