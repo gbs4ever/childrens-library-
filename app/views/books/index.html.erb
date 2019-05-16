@@ -30,9 +30,15 @@
     <td scope="row"><%=book.title%></td>
     <td><%=book.author%></td> 
   
-    <td class = "review-container<%=book.id%>"><%=book.reviews[-1].comments if !book.reviews.empty?%> <br> <a class= "review" href ="#"data-id="<%= book.id %>">See all reviews </a> </td> 
+    <td class = "review-container<%=book.id%>">
+      <% if !book.reviews.empty? %>
+        <%=book.reviews[-1].comments%><br> <a class= "review" href ="#"data-id="<%= book.id %>">See all reviews </a> 
+      <% else %>
+      <%=link_to "Please review this book", new_book_review_path(book) %>
+        <%end%>
+    </td> 
     <td><%=book.reviews[-1].status if !book.reviews.empty?%></td> 
-   
+
     <td><button ><%= link_to "Click here for more info", book_path(book)%></button></td>
     <div class = "taken out"> </div>
     <% if !current_user.books.include?(book) %>
