@@ -1,5 +1,15 @@
 
+<div class="container-fluid">
+      <%= form_tag "", method: "get" do %>
+        <%= select_tag "filter", "<option>Title</option><option>Author</option>".html_safe ,:style => "width:90px" %>
+        <%= submit_tag " Sort " %>
+      <% end %>
+      <%= form_tag "", method: "get"  do %>
 
+ <%= text_field_tag(:search, nil, placeholder:"search...")%>
+ <%= submit_tag "Search" %>
+ <%end%>
+ </div>
 
 
 <table class="table table-border table-hover"style="width:100%">
@@ -13,52 +23,31 @@
      <th scope="col"> Checkout </th>
   </tr>
    </thead>
+  
   <%@books.each do |book|%>
   <tr>
   
     <td scope="row"><%=book.title%></td>
     <td><%=book.author%></td> 
-
-    <td><%=book.reviews[-1].comments if !book.reviews.empty?%></td> 
+  
+    <td class = "review-container<%=book.id%>"><%=book.reviews[-1].comments if !book.reviews.empty?%> <br> <a class= "review" href ="#"data-id="<%= book.id %>">See all reviews </a> </td> 
     <td><%=book.reviews[-1].status if !book.reviews.empty?%></td> 
+   
     <td><button ><%= link_to "Click here for more info", book_path(book)%></button></td>
-    <td><button class="js-more"  data-id="<%= book.id %>">Check out</button></td>
+    <div class = "taken out"> </div>
+    <% if !current_user.books.include?(book) %>
+    <td class = "status<%=book.id%>" ><button class="check"  data-id="<%= book.id %>">Check out</button></td>
+    <%else%>
+    <td><p class="success-message"> Book checked out </p> </td>
+    <%end%>
     <%end%>
   </tr>
   </table>
 <br>
 
-  <div class="container-fluid">
-      <%= form_tag "", method: "get" do %>
-        <%= select_tag "filter", "<option>Title</option><option>Author</option>".html_safe ,:style => "width:90px" %>
-        <%= submit_tag " Sort " %>
-      <% end %>
- </div>
+  
 
-<div>
- <%= form_tag "", method: "get"  do %>
 
- <%= text_field_tag(:search, nil, placeholder:"search...")%>
- <%= submit_tag "Search" %>
- <%end%>
- </div>
-
-<script type="text/javascript" charset="utf-8">
-$(function() {
-  $(".js-more").on("click", function(event) {
-    event.preventDefault()
-     let id = $(this).data("id");
- $.post("/checkouts.json", {
-   checkout: {
-     book_id: id
-     }
-    }).done(function(data) {
-   //this happens after the request is complete
-   //this.remove()
- })
-  });
-})
-</script>
 
 
 

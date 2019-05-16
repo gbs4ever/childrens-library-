@@ -20,8 +20,7 @@ $(document).ready(function checkout () {
    console.log("j.checkout has loaded")
   $(".check").on("click", function (event) {
    event.preventDefault()
-   console.log('clicked')
-     let id = $(this).data("id");
+  let id = $(this).data("id");
     $.post("/checkouts.json", {
       checkout: {
         book_id: id
@@ -42,12 +41,9 @@ $(function () {
   $(".js-more").on("click", function () {
     $.getJSON("/checkouts.json", function (data) {
       console.log("the page clicker loaded")
-      data.forEach((el) => {
-        console.log(`${ el.due_date }`)
-        // add due date
-        $(".checkout ul")[0].innerHTML += `<li>${el.book.title}</li><br><br>${ el.due_date }`
-     })
-
+       data.forEach((el) => {
+       $(".checkout ul")[0].innerHTML += `<li>${el.book.title}</li><br><br>${ el.due_date }`
+        })
     })
   });
 })

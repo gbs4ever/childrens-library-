@@ -9,15 +9,15 @@ const reviewFetchJson =  ()=>{
    
     fetch(`/books/${id}.json`).then(res => res.json())
       .then(data =>{
-        $(`.review_container${id}`).html('')
-        let newbox= $(`.review_container${id}`).html(`<ol></ol>`)
+        $(`.review-container${id}`).html('')
+        let newbox= $(`.review-container${id}`).html(`<ol></ol>`)
         data["reviews"].forEach(  (review)=>{
          
       let newReview = new Review(review)
       
       let newHtml = newReview.formatIndex()
-          console.log(newHtml)
-          $(newbox).append(newHtml)
+         
+          $(`.review-container${id} ol`).append(newHtml)
         })
       })
 
@@ -34,7 +34,7 @@ this.status = review.status
 }
 
 Review.prototype.formatIndex = function(){
-  let reviewHtml = `<br><li>${this.comments}</li> <br>`
+  let reviewHtml = `<li>${this.comments}</li><br>`
   return reviewHtml
 
 }

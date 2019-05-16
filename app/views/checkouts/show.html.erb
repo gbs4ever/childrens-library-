@@ -3,5 +3,5 @@ Thank  You for visiting our library  <%=current_user.username%>, please come aga
 <h3>Book taken out: </h3>
 <p><%=@checkout.book.title.capitalize%>. </p>
 
-<p>Checked out: <%=time (@checkout.taken_out)%> </p>
+<p>Checked out: <%=time (@checkout.created_at)%> </p>
 <p>Due date: <%= time (@checkout.due_date)%> <p>
