@@ -40,10 +40,12 @@ $(document).ready(function checkout () {
  // add checkedout books to welcome page 
 $(function () {
   $(".js-more").on("click", function () {
-    $.getJSON("/checkouts.json", function (data) {
+    $.getJSON("/checkouts.json", (data) => {
       console.log("the page clicker loaded")
        data.forEach((el) => {
-       $(".checkout ul")[0].innerHTML += `<li>${el.book.title}</li><br><br>${ el.due_date }`
+         this.remove()
+       $(".row div")[0].innerHTML += `${el.book.title}<br>`
+         $(".col-sm span")[0].innerHTML += `${el.due_date }<br>`
         })
     })
   });
