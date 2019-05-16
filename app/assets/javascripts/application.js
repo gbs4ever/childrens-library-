@@ -15,7 +15,7 @@
 //= require bootstrap
 //= require_tree .
 
-//book checkout 
+//book page  checkout option 
 $(document).ready(function checkout () {
    console.log("j.checkout has loaded")
   $(".check").on("click", function (event) {
@@ -27,16 +27,14 @@ $(document).ready(function checkout () {
       }
     }).done( () => {
     this.remove()
-    
+      //this happens after the request is complete
       $(`.status${id}`).html('<p class="success-message"> Book checked out </p> ')
      console.log("smile")
  
-      //this happens after the request is complete
-   
     })
   });
  })
- // add checkout books to welcome
+ // add checkedout books to welcome page 
 $(function () {
   $(".js-more").on("click", function () {
     $.getJSON("/checkouts.json", function (data) {
