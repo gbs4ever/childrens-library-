@@ -22,7 +22,12 @@ class BooksController < ApplicationController
     end
   end
   def show
+   # binding.pry
     @book = Book.find(params[:id])
+     respond_to do |format|
+        format.html { render :show}
+        format.json { render json: @book}
+    end
   end
   def edit
     @book = Book.find(params[:id])
