@@ -13,9 +13,12 @@
 //= require jquery3
 //= require jquery_ujs
 //= require bootstrap
+
+
 //= require_tree .
 
-//book page  checkout option 
+//book page  checkout 
+
 $(document).ready(function checkout () {
    console.log("j.checkout has loaded")
   $(".check").on("click", function (event) {
