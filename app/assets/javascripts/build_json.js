@@ -10,7 +10,7 @@ const reviewFetchJson =  ()=>{
     fetch(`/books/${id}.json`).then(res => res.json())
       .then(data =>{
         $(`.review-container${id}`).html('')
-        let newbox= $(`.review-container${id}`).html(`<ol></ol>`)
+        let newbox = $(`.review-container${id}`).html(`<ol class= "text-primary"></ol>`)
         data["reviews"].forEach(  (review)=>{
          
       let newReview = new Review(review)
