@@ -15,7 +15,7 @@
   
       <td scope="row" ><%=checkout.book.title%> </td>
       <td><%= time (checkout.created_at) %> <%=checkout.id%> </td>
-      <td><%= time (checkout.due_date)%> 21 Day loan </td>
+      <td><%= time (checkout.due_date)%>  </td>
      <td class ="status<%=checkout.id%>"><button class="checkin" data-id="<%= checkout.id %>">Check in Book</button></td>
       <%end%>
     </tr>

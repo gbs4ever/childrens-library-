@@ -16,7 +16,7 @@ class CheckoutsController < ApplicationController
   def create
     var = current_user.checkouts.build(checkout_params)
     if  var.save  
-    var.due_date =  var.updated_at + 21.day
+    var.due_date = var.updated_at + 21.day
     var.save
      redirect_to checkout_path(var)
     else
