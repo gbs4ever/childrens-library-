@@ -12,7 +12,7 @@ Comments:
 <br>
 <button type="button"> <%=link_to "Review this book",  new_book_review_path(@book) %></button> <br><br>
 
-<%if current_user.id == @book.users.ids.first || current_user.admin %>
+<%if !!current_user.books.include?(@book) || current_user.admin %>
 
 <p><button type="button"> <%=link_to "Edit this book",  edit_book_path(@book) %></button> <p>
 <%end%>
