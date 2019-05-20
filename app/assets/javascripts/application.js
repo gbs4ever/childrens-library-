@@ -22,6 +22,7 @@
 $(document).ready(function checkout () {
    console.log("j.checkout has loaded")
   $(".check").on("click", function (event) {
+    console.log("we shouldnt see you")
    event.preventDefault()
   let id = $(this).data("id");
     $.post("/checkouts.json", {

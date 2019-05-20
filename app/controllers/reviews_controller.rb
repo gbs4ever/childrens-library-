@@ -18,8 +18,10 @@ class ReviewsController < ApplicationController
    
  
   def create
+
     @review = current_user.reviews.build(review_params)
     if  current_user.save
+      
      redirect_to book_review_path(@review.book, @review)  
     else 
      render :new 

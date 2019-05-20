@@ -14,8 +14,12 @@ class BooksController < ApplicationController
    @book = Book.new 
   end
   def create
-    @book=current_user.books.build(book_params) 
-    if  current_user.save  
+
+    @book = current_user.books.build(book_params) 
+      
+    if   current_user.save
+     
+   
       redirect_to book_path(@book)
     else
       render :new 

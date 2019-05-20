@@ -1,5 +1,6 @@
 class CheckoutsController < ApplicationController
   def index
+    #binding.pry
     respond_to do |format|
         format.html { render :index}
         format.json { render json: @checkouts}
@@ -14,11 +15,11 @@ class CheckoutsController < ApplicationController
    @checkout =   current_user.checkouts.build
   end
   def create
-    var = current_user.checkouts.build(checkout_params)
-    if  var.save  
-    var.due_date = var.updated_at + 21.day
-    var.save
-     redirect_to checkout_path(var)
+    @var = current_user.checkouts.build(checkout_params)
+    if  @var.save  
+    @var.due_date = @var.updated_at + 21.day
+    @var.save
+     redirect_to checkout_path(@var)
     else
      render :new 
     end
