@@ -41,7 +41,7 @@
 
     <td><button class="btn btn-light"><%= link_to "Click here for more info", book_path(book)%></button></td>
     <div class = "taken out"> </div>
-    <% if !current_user.checkouts.include?(book) %>
+    <% if !current_user.checked_out_books.include?(book) %>
     <td class = "status<%=book.id%>" ><button class="check"  data-id="<%= book.id %>">Check out</button></td>
     <%else%>
     <td><p class="success-message"> Book checked out </p> </td>

@@ -2,7 +2,7 @@
 <p><%= form_for @checkout do |f| %>
 
   <%= f.label "Choose a book " %><br>
-  <%= f.collection_select :book_id, Book.all - current_user.books, :id, :title , multiple: true %> <br>
+  <%= f.collection_select :book_id, Book.all - current_user.checked_out_books, :id, :title , multiple: true %> <br>
   <%= f.label "Check out date " %><br>
  <%= select_date Date.today, prefix: :taken_out%><br><br>
  <%if  current_user.admin%>

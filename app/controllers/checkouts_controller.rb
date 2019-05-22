@@ -15,6 +15,7 @@ class CheckoutsController < ApplicationController
    @checkout =   current_user.checkouts.build
   end
   def create
+
     @var = current_user.checkouts.build(checkout_params)
     if  @var.save  
     @var.due_date = @var.updated_at + 21.day
