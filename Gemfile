@@ -33,7 +33,7 @@ gem 'active_model_serializers'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'dotenv-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -57,7 +57,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem  'pry-rails'
  
-  gem 'dotenv-rails'
+  
 end
 
 group :test do
