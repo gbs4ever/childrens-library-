@@ -275,7 +275,6 @@ DEPENDENCIES
   omniauth-facebook
   pg (>= 0.18, < 2.0)
   popper_js (~> 1.12.9)
-  pry
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
