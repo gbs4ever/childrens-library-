@@ -1,16 +1,22 @@
 
-<div class="container-fluid">
+<div class="container">
+ <div class="row">
+    <div class="col-2">
       <%= form_tag "", method: "get" do %>
         <%= select_tag "filter", "<option>Title</option><option>Author</option>".html_safe ,:style => "width:90px" %>
         <%= submit_tag " Sort " %>
       <% end %>
+       </div>
       <%= form_tag "", method: "get"  do %>
+    <div class="col">
 
  <%= text_field_tag(:search, nil, placeholder:"search...")%>
  <%= submit_tag "Search" %>
  <%end%>
  </div>
-
+  </div>
+   </div> 
+<br>
 
 <table class="table table-border table-hover"style="width:100%">
  <thead class="p-3 mb-2 bg-info text-white">
