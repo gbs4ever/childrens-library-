@@ -1,18 +1,19 @@
 # README
 
-# Ruby version
+# Version
 Ruby 2.6.1
 Rails 5.2.3
 
-Welcome to your new app! In this directory, you'll find the files you need to be able to use  your Ruby library  app. We have created a checkout system in addition to just reviewing the books. Additional features will be added on , stay tuned !
+Welcome to your new app! In this directory, you'll find the files you need to be able to use  your Ruby library  app. We have created a checkout system in addition to just reviewing the books. Additional features will be added soon , stay tuned !
 
 * System dependencies,
 All the dependencies are listed in the gem file.
 
 * Database initialization,
-The db  for this ruby app is built on postgresql, but can be  changed to other SQL DB.
+The db  for this rails app is built on postgresql, but can be  changed to other SQL DB.
 
-* Deployment instructions,
+
+
 
 
 
@@ -21,6 +22,15 @@ As we know  reading for children is great as it helps them   with their cognitiv
 
 ## Installation
 Fork  and clone the app [here](https://github.com/gbs4ever/childrens-library-) 
+
+Run:
+``bundle install``
+
+Migrate database:
+``rake db:create && rake db:migrate``
+
+To run on your local machine:
+ ``rails s``
 
 ## Contributing
 
