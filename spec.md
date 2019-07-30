@@ -1,4 +1,4 @@
-# Specifications for the Rails Assessment
+# Specifications for Rails 
 
 Specs:
 - [x] Using Ruby on Rails for the project

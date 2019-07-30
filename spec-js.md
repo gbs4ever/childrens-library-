@@ -1,4 +1,4 @@
-# Specifications for the Rails with JavaScript Assessment
+# Specifications for the Rails with JavaScript 
 
 Specs:
 - [x] Must have a Rails Backend and new requirements implemented through JavaScript.
