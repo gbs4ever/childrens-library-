@@ -4,3 +4,8 @@
       Customer.create(email: lead[0], first_name: lead[1], last_name: lead[2])
     end
 [] confirm that a user can only delete their books 
+[] style errors so it is clear to user ! 
+[] add pic to the background 
+[]have  book cover pull from api 
+[]send email 3 days before books are do 
+[]send email on signup 
