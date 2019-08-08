@@ -24,7 +24,7 @@
   </tr>
    </thead>
   
-  <%@books.each do |book|%>
+  <% @books.each do |book|%>
   <tr>
   
     <td scope="row"><%=book.title%></td>
@@ -32,7 +32,7 @@
   
     <td class = "review-container<%=book.id%>">
       <% if !book.reviews.empty? %>
-        <%=book.reviews[-1].comments%><br> <a class= "review" href ="#"data-id="<%= book.id %>">See all reviews </a> 
+        <%= sanitize book.reviews[-1].comments%><br> <a class= "review" href ="#"data-id="<%= book.id %>">See all reviews </a> 
       <% else %>
       <%=link_to "Please review this book", new_book_review_path(book) %>
         <%end%>

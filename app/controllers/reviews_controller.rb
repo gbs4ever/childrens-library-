@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
     end 
   end
   def new
+   
     if params[:book_id]
       @book = Book.find(params[:book_id])
       @review  = @book.reviews.build  
@@ -18,11 +19,12 @@ class ReviewsController < ApplicationController
    
  
   def create
-
-    @review = current_user.reviews.build(review_params)
-    if  current_user.save
-      
-     redirect_to book_review_path(@review.book, @review)  
+  full_sanitizer = Rails::Html::FullSanitizer.new
+  sanitized_review = review_params.dup
+  sanitized_review[:comments] = full_sanitizer.sanitize(review_params[:comments])
+  @review = current_user.reviews.build(sanitized_review)
+     if  current_user.save
+  redirect_to book_review_path(@review.book, @review)  
     else 
      render :new 
    end
