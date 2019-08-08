@@ -3,6 +3,6 @@
 <br>
 
 <h3>Title: <%=@review.book.title%></h3> 
-<p>Comments:  <%=@review.comments%><br>
+<p>Comments:  <%= sanitize @review.comments%><br>
 Status:  <%=@review.status%>
 </p>
