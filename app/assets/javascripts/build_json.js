@@ -34,7 +34,8 @@ this.status = review.status
 }
 
 Review.prototype.formatIndex = function(){
-  let reviewHtml = `<li>${this.comments}</li><br>`
+  let review = $('<li>').text(this.comments).html() 
+ let reviewHtml = `<li>${review}</li><br>`
   return reviewHtml
 
 }
