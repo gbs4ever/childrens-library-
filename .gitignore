@@ -7,6 +7,7 @@
 # Ignore bundler config.
 /.bundle
 .env
+notes_js.md
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
