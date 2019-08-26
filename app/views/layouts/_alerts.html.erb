@@ -1,8 +1,12 @@
 <style>
 
 </style>
-<%if notice || alert%>
-<p class="notice"><%= notice %></p>
+<div class=" text-danger" >
+<%if notice%>
 
+<p class="notice"><%= notice %></p>
+<%elsif  alert %>
 <p class="alert"><%= alert %></p>
+
 <%end%>
+</div>
