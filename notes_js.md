@@ -9,3 +9,6 @@
 []have  book cover pull from api 
 []send email 3 days before books are do 
 []send email on signup 
+[x]check or login validations
+[x]check or login validations styling
+[x]check or signup validations messages
