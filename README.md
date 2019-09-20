@@ -4,7 +4,7 @@
 Ruby 2.6.1
 Rails 5.2.3
 
-Welcome to your new app! In this directory, you'll find the files you need to be able to use  your Ruby library  app. We have created a checkout system in addition to just reviewing the books. Additional features will be added soon , stay tuned !
+Welcome to children's app a full-stack application built with Ruby 0n Rails connected to a Postgres DB.I employed sessions leveraging Devise for authentication/authorization. In additon you can login with Facebook using Omniauth. We have created a checkout system and implemented JavaScript to enable you to keep track of the books you have  taken out,in addition to just reviewing the books. Additional features will be added soon , stay tuned !! 
 
 * System dependencies,
 All the dependencies are listed in the gem file.
@@ -14,12 +14,13 @@ The db  for this rails app is built on postgresql, but can be  changed to other 
 
 
 
-
-
-
 ## Usage
-As we know  reading for children is great as it helps them   with their cognitive development to develop their  language, physical, social, and emotional skills.At a certain age we encourage these young minds to start reading on their own. How can we insure that the books they read and the concepts are  appropriate for that child? As we know children develop at different rates and may be scared or not understand certain concepts.  I developed this app so as a community we could build a resource of books and if they are appropriate (with some comments)
-
+As we know  reading for children is great as it helps them with their cognitive development and to develop their  language, physical, social, and emotional skills.At a certain age we encourage these young minds to start reading on their own. How can we insure that the books they read and the concepts are  appropriate for that child? As we know children develop at different rates and may be scared or not understand certain concepts.  I developed this app so as a community we could build a resource of books we feel are appropriate (with some comments)
+ 
+ ## See it live:
+ [Click here](https://childrens-library-55.herokuapp.com/) 
+ 
+ 
 ## Installation
 Fork  and clone the app [here](https://github.com/gbs4ever/childrens-library-) 
 
