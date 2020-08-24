@@ -4,10 +4,10 @@
 Ruby 2.6.1
 Rails 5.2.3
 
-Welcome to children's app a full-stack application built with Ruby 0n Rails connected to a Postgres DB.I employed sessions leveraging Devise for authentication/authorization. In additon you can login with Facebook using Omniauth. We have created a checkout system and implemented JavaScript to enable you to keep track of the books you have  taken out,in addition to just reviewing the books. Additional features will be added soon , stay tuned !! 
+Welcome to children's app a full-stack application built with Ruby 0n Rails connected to a Postgres DB.I employed sessions leveraging Devise(gem) for authentication/authorization. In additon you can login with Facebook using Omniauth. We have created a checkout system and implemented JavaScript to enable you to keep track of the books you have  taken out,in addition to just reviewing the books. Additional features will be added soon , stay tuned !! 
 
 * System dependencies,
-All the dependencies are listed in the gem file.
+For all the dependencies see the gem file.
 
 * Database initialization,
 The db  for this rails app is built on postgresql, but can be  changed to other SQL DB.
